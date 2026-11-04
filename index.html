@@ -3,424 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#070411">
-<title>معاذ شعيب • هدية رومانسية أسطورية لجنى</title>
+<title>معاذ شعيب • هدية جنى الأسطورية v3.0</title>
 <style>
-:root{--bg:#070411;--pink:#ff6ac1;--pink2:#ff1b9d;--purple:#7b4eff;--cyan:#00f0ff;--glass:rgba(18,8,34,0.86);--line:rgba(255,106,193,0.45);--muted:#e9dbff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:20px}
-body{margin:0;background:var(--bg);color:#fff5fa;font-family:Tahoma,Arial,sans-serif;overflow-x:hidden;background-image:radial-gradient(circle at 10% 15%,#ff1b9d40,transparent 40%),radial-gradient(circle at 90% 85%,#7b4eff45,transparent 45%),radial-gradient(circle at 50% 50%,#00f0ff25,transparent 50%);background-attachment:fixed}
-body:before{content:"";position:fixed;inset:0;z-index:-4;background:linear-gradient(135deg,#070411,#130722 50%,#05020a)}
-
-button,input,textarea,select{font:inherit}
-button{border:1px solid #ffffff35;border-radius:18px;padding:15px 24px;background:linear-gradient(135deg,var(--pink2),var(--purple));color:white;font-weight:700;cursor:pointer;transition:all .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 25px rgba(255,27,157,0.5)}
-button:hover{transform:translateY(-4px) scale(1.03);filter:brightness(1.2);box-shadow:0 0 45px rgba(255,27,157,0.8)}
-button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-
-input,textarea,select{width:100%;padding:15px;border:1px solid var(--line);border-radius:16px;background:#140822ee;color:#fff;margin:8px 0 14px;backdrop-filter:blur(12px)}
-textarea{min-height:110px;resize:vertical}
-label{display:block;color:#f3d2ee;font-size:14px;margin-top:8px}
-a{color:#ff9fe2}
-.hidden{display:none!important}
-.wrap{width:min(1040px,92%);margin:auto}
-.center-screen{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:22px;position:relative}
-
-.glass{background:var(--glass);border:1px solid var(--line);border-radius:30px;backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);box-shadow:0 20px 60px rgba(0,0,0,0.7),inset 0 0 35px rgba(255,27,157,0.15)}
-
-.lock-card-new{
-  width:min(440px,100%);padding:42px 32px;text-align:center;position:relative;z-index:2;border-radius:34px;
-  background:var(--glass);border:1px solid rgba(255,106,193,0.6);
-  box-shadow:0 0 60px rgba(255,27,157,0.4), inset 0 0 35px rgba(123,78,255,0.25);
-  animation:cardFloat 4s ease-in-out infinite alternate;
+:root {
+  --bg-color: #06020e;
+  --primary-pink: #ff2a9d;
+  --accent-purple: #8a2be2;
+  --neon-cyan: #00f0ff;
+  --glass-bg: rgba(20, 8, 38, 0.88);
+  --glass-border: rgba(255, 42, 157, 0.4);
+  --text-main: #fff0f8;
 }
-@keyframes cardFloat{0%{transform:translateY(0)}100%{transform:translateY(-10px)}}
 
-.lock-avatar{
-  width:90px;height:90px;margin:0 auto 20px;border-radius:50%;
-  background:linear-gradient(135deg,var(--pink2),var(--cyan));
-  display:flex;align-items:center;justify-content:center;font-size:42px;
-  box-shadow:0 0 35px var(--pink2);animation:pulseIcon 2s infinite;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
-@keyframes pulseIcon{0%,100%{transform:scale(1);box-shadow:0 0 25px var(--pink2)}50%{transform:scale(1.1);box-shadow:0 0 50px var(--cyan)}}
 
-.eyebrow{letter-spacing:3px;font-size:12px;color:#ffbde8;text-transform:uppercase}
-h1,h2,h3,p{overflow-wrap:anywhere}
-h1{font-size:clamp(28px,7vw,46px);line-height:1.2;color:#ffdef2;margin:12px 0;text-shadow:0 0 30px #ff1b9d66}
-h2{color:#ffcbe8;font-size:clamp(24px,5vw,33px);margin:0 0 14px;text-shadow:0 0 20px #ff1b9d44}
-h3{color:#ffe4f3}
-.sub{color:var(--muted);line-height:2}
-.tiny{font-size:12px;color:#d4bfe2;line-height:1.8}
+/* خلفية متدرجة متحركة */
+.bg-glow {
+  position: fixed; inset: 0; z-index: -3;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 42, 157, 0.15), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.2), transparent 45%);
+}
 
-/* شاشة التتابع السحري الأسطورية بالثواني */
-#loveIntro{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;background:radial-gradient(circle,#1a0933 0%,#070411 85%);text-align:center}
-#loveIntro.show{display:flex}
-.sequence-box{position:relative;z-index:2;padding:25px;animation:fadeInScale .6s cubic-bezier(.1,1.2,.3,1) forwards}
-.sequence-text{font-size:clamp(30px,7vw,58px);font-weight:900;color:#fff;text-shadow:0 0 25px var(--pink2),0 0 50px var(--purple),0 0 75px var(--cyan);letter-spacing:1px}
-@keyframes fadeInScale{0%{opacity:0;transform:scale(0.2) translateY(30px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+.wrap { width: min(1000px, 92%); margin: auto; padding: 20px 0; }
+.hidden { display: none !important; }
 
-.intro-heart{position:absolute;top:110%;animation:heartFly 1.8s cubic-bezier(.1,.7,.3,1) forwards;filter:drop-shadow(0 0 15px var(--pink))}
-@keyframes heartFly{0%{transform:translateY(0) scale(0.2) rotate(0deg);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translate(var(--dx),-130vh) scale(var(--sc)) rotate(360deg);opacity:0}}
+/* أزرار ومدخلات */
+button {
+  background: linear-gradient(135deg, var(--primary-pink), var(--accent-purple));
+  color: #fff; border: none; border-radius: 50px; padding: 14px 28px;
+  font-size: 16px; font-weight: bold; cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 42, 157, 0.4);
+  transition: all 0.3s ease;
+}
+button:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 42, 157, 0.7); }
 
-/* فيديو الخلفية الواضح للرئيسية */
-.hero{min-height:100svh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden}
-.hero-inner{padding:100px 0 70px;width:100%;z-index:2}
-.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.65;z-index:-1;filter:brightness(0.9) contrast(1.15)}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,4,17,0.2) 0%,rgba(7,4,17,0.8) 75%,var(--bg))}
+input, textarea {
+  width: 100%; padding: 14px; border-radius: 12px;
+  border: 1px solid var(--glass-border); background: rgba(10, 3, 22, 0.9);
+  color: #fff; margin: 8px 0 16px; font-size: 15px;
+}
 
-.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid #ff6ac166;border-radius:99px;background:rgba(255,255,255,0.08);color:#ffdef2;font-size:13px;box-shadow:0 0 20px #ff1b9d33}
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.ghost{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.25)}
+/* شاشة القفل */
+.lock-screen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lock-card {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 28px; padding: 40px 25px; text-align: center;
+  width: min(420px, 100%); backdrop-filter: blur(20px);
+  box-shadow: 0 0 50px rgba(255, 42, 157, 0.25);
+}
 
-section{padding:45px 0 55px;position:relative}
-.section-head{text-align:center;max-width:700px;margin:0 auto 30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
-.card{padding:24px;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(255,27,157,0.3)}
+/* شاشة التتابع بالثواني */
+#loveSequence {
+  position: fixed; inset: 0; z-index: 999;
+  background: radial-gradient(circle, #18052e 0%, #05010a 90%);
+  display: none; align-items: center; justify-content: center; text-align: center;
+}
+#loveSequence.active { display: flex; }
+.seq-text {
+  font-size: clamp(28px, 6vw, 52px); font-weight: 900;
+  color: #fff; text-shadow: 0 0 20px var(--primary-pink), 0 0 40px var(--neon-cyan);
+  animation: pulseZoom 0.8s ease-in-out infinite alternate;
+}
+@keyframes pulseZoom { 0% { transform: scale(0.95); } 100% { transform: scale(1.05); } }
 
-.reveal{opacity:0;transform:translateY(35px) scale(0.96);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
-.icon{font-size:40px;margin-bottom:10px;animation:floatIcon 3s ease-in-out infinite}
-@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+/* هيرو وفيديو الخلفية */
+.hero {
+  min-height: 90vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.55; z-index: -1; filter: brightness(0.85);
+}
 
-.counter-card{padding:32px;text-align:center}
-.counter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
-.counter-unit{padding:18px 6px;border:1px solid rgba(255,106,193,0.35);background:rgba(255,255,255,0.05);border-radius:18px;box-shadow:inset 0 0 20px rgba(255,106,193,0.15)}
-.counter-number{display:block;font-size:clamp(24px,6vw,40px);font-weight:900;color:#ffdef2;font-variant-numeric:tabular-nums;text-shadow:0 0 20px var(--pink2)}
-.counter-label{display:block;color:#e1c9ea;font-size:12px;margin-top:6px}
-.counter-line{line-height:2;color:#ffdef2}
+.glass-box {
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 24px; padding: 25px; margin: 20px 0;
+  backdrop-filter: blur(15px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-.timeline{border-right:3px solid var(--pink2);margin-right:10px;padding-right:22px}
-.timeline .card{margin:18px 0}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
 
-.photo-card{padding:0;overflow:hidden}
-.photo-card img{display:block;width:100%;height:220px;object-fit:cover;transition:transform .6s}
-.photo-card:hover img{transform:scale(1.06)}
-.photo-caption{padding:18px}
+/* العداد */
+.counter-box { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.counter-item { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 16px; min-width: 80px; text-align: center; }
+.counter-num { font-size: 26px; font-weight: bold; color: var(--primary-pink); }
 
-.message-text{white-space:pre-wrap;line-height:2;color:#fff0f8}
-.message-text.closed{display:none}
-.message-card{min-height:170px;border-color:rgba(255,106,193,0.45)}
-.message-card.opened{box-shadow:0 0 40px rgba(255,27,157,0.4),0 0 70px rgba(123,78,255,0.25);transform:translateY(-5px)}
+/* الصور الدائرية */
+.circle-imgs { display: flex; justify-content: center; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
+.circle-card { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary-pink); box-shadow: 0 0 25px var(--primary-pink); }
+.circle-card img { width: 100%; height: 100%; object-fit: cover; }
 
-.quiz-q{padding:18px;border:1px solid rgba(255,255,255,0.15);border-radius:18px;margin:15px 0;background:rgba(255,255,255,0.04)}
-.option{width:100%;display:block;text-align:right;margin:10px 0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18)}
-.option.selected{background:#a22d7a;border-color:var(--pink);box-shadow:0 0 20px var(--pink2)}
-.result{padding:18px;border:1px solid rgba(255,106,193,0.45);border-radius:18px;background:rgba(255,106,193,0.1);line-height:2}
-
-.surprise-box{text-align:center;padding:32px}
-.gift-icon{font-size:80px;animation:floatGift 3s ease-in-out infinite}
-@keyframes floatGift{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
-
-footer{text-align:center;padding:70px 15px 110px}
-.signature{font-size:clamp(28px,7vw,44px);font-weight:bold;color:var(--pink);text-shadow:0 0 30px var(--pink2);margin:12px 0}
-
-/* قلوب وعناصر متطايرة في الخلفية */
-#floaters{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-2}
-.floater{position:absolute;bottom:-70px;animation:floatUp linear forwards;opacity:0.8;filter:drop-shadow(0 0 10px #ff6ac188)}
-@keyframes floatUp{to{transform:translateY(-120svh) rotate(360deg);opacity:0}}
-
-#floatingCounter{position:fixed;top:12px;right:12px;z-index:10;padding:10px 16px;border:1px solid var(--pink);border-radius:999px;background:rgba(19,10,43,0.92);backdrop-filter:blur(16px);box-shadow:0 0 30px rgba(255,27,157,0.5);font-size:13px;color:#fff;display:none;max-width:calc(100% - 24px)}
-#floatingCounter b{color:#ff9fe2}
-
-#musicDock{position:fixed;bottom:15px;left:15px;width:min(320px,calc(100% - 30px));z-index:10;padding:14px 16px;border-radius:20px;background:rgba(20,8,36,0.94);border:1px solid rgba(255,106,193,0.45);box-shadow:0 12px 45px rgba(0,0,0,0.85);backdrop-filter:blur(20px)}
-.music-row{display:flex;align-items:center;gap:10px}
-.music-meta{flex:1;min-width:0}
-#songName{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#ffdef2}
-#songState{font-size:11px;color:#d5bcd7;margin-top:4px}
-.mini-btn{padding:10px 14px}
-
-#adminBtn{position:fixed;top:8px;left:8px;z-index:20;padding:8px 10px;background:rgba(255,255,255,0.1);opacity:0.35;font-size:12px;border-radius:10px}
-#adminBtn:hover{opacity:1}
-#adminOverlay{position:fixed;inset:0;z-index:60;background:rgba(7,4,17,0.97);overflow:auto;padding:20px}
-.admin-inner{max-width:780px;margin:0 auto;padding-bottom:40px}
-.admin-top{display:flex;align-items:center;gap:12px;justify-content:space-between;position:sticky;top:0;background:rgba(7,4,17,0.96);padding:12px 0;z-index:2;border-bottom:1px solid rgba(255,255,255,0.15)}
-.admin-block{padding:20px;margin:18px 0}
-.notice{padding:14px 16px;border-radius:14px;background:#32153c;color:#f8dff3;line-height:1.9;font-size:13px;border:1px solid var(--pink2)}
-
-.video-showcase{width:min(100%,440px);aspect-ratio:16/9;margin:20px auto;border-radius:22px;overflow:hidden;background:#05020a;border:1px solid rgba(255,106,193,0.55);box-shadow:0 0 35px rgba(255,27,157,0.35)}
-.video-showcase video{width:100%;height:100%;object-fit:cover}
-
-.dual-circles{display:flex;justify-content:center;gap:25px;margin:25px 0;flex-wrap:wrap}
-.circle-card{width:140px;height:140px;border-radius:50%;overflow:hidden;border:3px solid var(--pink);box-shadow:0 0 30px var(--pink2);background:#140822}
-.circle-card img{width:100%;height:100%;object-fit:cover}
-
-nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px auto}
-nav a{text-decoration:none;padding:10px 16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);border-radius:99px;font-size:13px;transition:.25s}
-nav a:hover{background:var(--pink2);color:#fff;box-shadow:0 0 15px var(--pink2)}
-@media(max-width:520px){.counter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:18px}}
+/* الموسيقى */
+#musicBar {
+  position: fixed; bottom: 15px; left: 15px; z-index: 100;
+  background: rgba(15, 5, 30, 0.95); border: 1px solid var(--primary-pink);
+  border-radius: 30px; padding: 10px 20px; display: flex; align-items: center; gap: 12px;
+}
 </style>
 </head>
 <body>
-<div id="floaters" aria-hidden="true"></div>
 
-<!-- شاشة التتابع السحري الأسطورية -->
-<div id="loveIntro" aria-hidden="true">
-  <div id="introHeartField"></div>
-  <div class="sequence-box">
-    <div id="sequenceText" class="sequence-text">❤️ عيد حب سعيد يا چوچا ❤️</div>
+<div class="bg-glow"></div>
+
+<!-- شاشة القفل -->
+<div id="lockPage" class="lock-screen">
+  <div class="lock-card">
+    <div style="font-size: 50px; margin-bottom: 10px;">🎁</div>
+    <h2>هدية خاصة لجنى ❤️</h2>
+    <p style="opacity: 0.8; margin: 10px 0 20px;">اكتبي كلمة السر لفتح الهدية</p>
+    <input type="password" id="passInput" placeholder="كلمة السر..." style="text-align: center;">
+    <button onclick="checkPass()">افتحي الهدية ✨</button>
+    <p id="errMsg" style="color: #ff4f8b; margin-top: 10px; font-weight: bold;"></p>
   </div>
 </div>
 
-<div id="floatingCounter" aria-live="off">❤️ بقالنا <b id="floatDays">0</b> يوم و <b id="floatHours">00</b>:<b id="floatMinutes">00</b>:<b id="floatSeconds">00</b></div>
-
-<!-- شاشة القفل الفخمة -->
-<div id="lockScreen" class="center-screen">
-  <div class="lock-card-new">
-    <div class="lock-avatar">🎁</div>
-    <div class="eyebrow">A Special Romantic Gift</div>
-    <h1 id="lockTitle">هدية مخصوص لجنى</h1>
-    <p class="sub" id="lockSubtitle">في حكاية صغيرة مستنياكي جوه ❤️</p>
-    
-    <div style="margin:22px 0 12px;">
-      <input id="sitePassword" type="password" placeholder="اكتبي كلمة السر هنا..." style="text-align:center; font-size:17px; letter-spacing:3px;" autocomplete="off">
-    </div>
-    
-    <button id="unlockBtn" type="button" style="width:100%; padding:15px; font-size:17px;">افتحي الهدية ✨</button>
-    
-    <p id="lockError" class="tiny" style="color:#ff4f8b; font-weight:bold; margin-top:14px; min-height:22px;" aria-live="polite"></p>
-    
-    <p class="tiny" style="margin-top:20px; opacity:0.85;">صممت بكل حب • معاذ شعيب</p>
-  </div>
+<!-- شاشة التتابع الرومانسية بالثواني -->
+<div id="loveSequence">
+  <div id="seqText" class="seq-text">❤️ عيد حب سعيد يا چوچا ❤️</div>
 </div>
 
-<div id="site" class="hidden">
-  <button id="adminBtn" aria-label="فتح لوحة الإعدادات">⚙️</button>
+<!-- الموقع الرئيسي -->
+<div id="mainSite" class="hidden">
+  
+  <!-- الهيرو مع الفيديو -->
   <section class="hero">
-    <!-- فيديو الخلفية الرومانسي المباشر -->
-    <video id="heroBgVideo" class="hero-bg-video" autoplay loop muted playsinline></video>
-    <div class="wrap hero-inner">
-      <span class="pill">✦ MADE WITH PASSION & LOVE ✦</span>
-      <h1 id="heroTitle" class="hero-title">إلى جنى… حكاية صغيرة من قلبي ❤️</h1>
-      <p id="heroSubtitle" class="sub hero-copy">مش مجرد لينك؛ دي مساحة ساحرة فيها كلام وذكريات وتفاصيل معمولة مخصوص ليكي.</p>
-      <div class="actions">
-        <a href="#counter" style="text-decoration:none"><button>شوفي حكايتنا ↓</button></a>
-        <a href="#messages" style="text-decoration:none"><button class="ghost">رسائل مستنياكي 💌</button></a>
-      </div>
-      <p style="font-size:24px;margin-top:30px">♡ ✧ ♡ ✧ ♡</p>
+    <video id="heroVid" class="hero-video" autoplay loop muted playsinline></video>
+    <div class="wrap">
+      <h1 id="siteTitle" style="font-size: clamp(30px, 6vw, 48px); margin-bottom: 15px;">إلى جنى… حكاية صغيرة من قلبي ❤️</h1>
+      <p id="siteSub" style="font-size: 18px; opacity: 0.9;">مساحة خاصة مصممة بكل حب لتخليد ذكرياتنا.</p>
     </div>
   </section>
 
-  <nav class="wrap" aria-label="التنقل داخل الموقع">
-    <a href="#counter">العداد ⏳</a><a href="#story">حكايتنا ✨</a><a href="#gallery">معرض الصور 🌷</a><a href="#messages">الرسائل 💌</a><a href="#quiz">الاختبار 🧠</a><a href="#surprise">مفاجأة 🎁</a><a href="#romanceVideo">فيديو رومانسى 🎬</a>
-  </nav>
-
   <main class="wrap">
-    <section id="counter">
-      <div class="section-head reveal">
-        <div class="icon">⏳</div><h2>كل ثانية ليها حكاية</h2>
-        <p class="sub" id="counterIntro">وقت بيعد من لحظة مميزة… والتفاصيل بتكمل الحكاية.</p>
-      </div>
-      <div class="glass counter-card reveal">
-        <p class="counter-line" id="counterCaption">من يوم ما بدأت حكايتنا</p>
-        <div class="counter-grid">
-          <div class="counter-unit"><span id="months" class="counter-number">0</span><span class="counter-label">شهر</span></div>
-          <div class="counter-unit"><span id="days" class="counter-number">0</span><span class="counter-label">يوم</span></div>
-          <div class="counter-unit"><span id="hours" class="counter-number">00</span><span class="counter-label">ساعة</span></div>
-          <div class="counter-unit"><span id="minutes" class="counter-number">00</span><span class="counter-label">دقيقة</span></div>
-          <div class="counter-unit"><span id="seconds" class="counter-number">00</span><span class="counter-label">ثانية</span></div>
-          <div class="counter-unit"><span id="weeks" class="counter-number">0</span><span class="counter-label">أسبوع تقريبًا</span></div>
-          <div class="counter-unit"><span id="totalDays" class="counter-number">0</span><span class="counter-label">إجمالي الأيام</span></div>
-          <div class="counter-unit"><span id="totalHours" class="counter-number">0</span><span class="counter-label">إجمالي الساعات</span></div>
-        </div>
-        <p class="tiny">العداد بيتحدث كل ثانية. غيّر تاريخ البداية من لوحة الإعدادات عشان يعكس التاريخ الحقيقي.</p>
-      </div>
-    </section>
-
-    <section id="story">
-      <div class="section-head reveal"><div class="icon">📖</div><h2>محطات في الحكاية</h2><p class="sub">من صدفة صغيرة بدأت حكاية ليها مكان كبير في القلب.</p></div>
-      <div id="timeline" class="timeline"></div>
-    </section>
-
-    <section id="gallery">
-      <div class="section-head reveal"><div class="icon">🌷</div><h2>ركن الصور والذكريات</h2><p class="sub">بين صور حالمة ولمسات أنمي وألوان نيون، كل تفصيلة معمولة عشان الحكاية.</p></div>
-      <div id="galleryGrid" class="grid"></div>
-    </section>
-
-    <section id="messages">
-      <div class="section-head reveal"><div class="icon">💌</div><h2>عشر رسائل ليكي</h2><p class="sub">كل كارت جواه كلام مستنيكي… افتحيه وشوفي المفاجأة 💌</p></div>
-      <div id="messagesGrid" class="grid"></div>
-    </section>
-
-    <section id="quiz">
-      <div class="section-head reveal"><div class="icon">🧠</div><h2>إنتِ تعرفيني قد إيه؟</h2><p class="sub">عشر أسئلة، وكل إجابة بتقرّبنا من النتيجة.</p></div>
-      <div class="glass card reveal">
-        <div id="quizQuestions"></div>
-        <button id="submitQuiz" style="width:100%">احسبي النتيجة وأرسليها لمعاذ 🚀</button>
-        <div id="quizResult" class="result hidden" style="margin-top:16px" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="surprise">
-      <div class="section-head reveal"><div class="icon">🎁</div><h2>صندوق المفاجآت</h2><p class="sub">كل ضغطة تفتحلك رسالة مختلفة.</p></div>
-      <div class="glass surprise-box reveal">
-        <div id="giftIcon" class="gift-icon">🎁</div>
-        <p id="giftText" class="sub">مستعدة تفتحي المفاجأة؟</p>
-        <button id="openGift">افتحي المفاجأة 💖</button>
-      </div>
-    </section>
-
-    <section id="mood">
-      <div class="section-head reveal"><div class="icon">🌙</div><h2>اختاري إحساسك</h2><p class="sub">اختاري الحالة اللي شبهك دلوقتي.</p></div>
-      <div class="grid reveal">
-        <button data-mood="happy">🥰 فرحانة</button><button data-mood="calm">🌙 محتاجة هدوء</button><button data-mood="laugh">😂 عاوزة تضحكي</button><button data-mood="brave">🌷 محتاجة تشجيع</button>
-      </div>
-      <div id="moodResult" class="result hidden" style="margin-top:16px"></div>
-    </section>
-
-    <section id="romanceVideo">
-      <div class="section-head reveal"><div class="icon">🎬</div><h2>فيديو رومانسى خاص</h2><p class="sub">لحظات مميزة وفيديو متحرك يعبر عن الحكاية.</p></div>
-      <div class="glass card reveal" style="text-align:center">
-        <div class="video-showcase">
-          <video id="romanceVideoEl" autoplay loop muted playsinline></video>
-        </div>
-        <p class="tiny">يمكنك تعديل رابط الفيديو المباشر بسهولة من لوحة الإعدادات.</p>
-      </div>
-    </section>
-
-    <section id="dualImagesSection">
-      <div class="section-head reveal"><div class="icon">💖</div><h2>لحظات لا تُنسى</h2><p class="sub">صورتان مختارتان بعناية من ذكرياتنا.</p></div>
-      <div class="dual-circles reveal">
-        <div class="circle-card"><img id="dualImg1" alt="صورة أولى" loading="lazy"></div>
-        <div class="circle-card"><img id="dualImg2" alt="صورة ثانية" loading="lazy"></div>
-      </div>
-    </section>
-
-    <section id="lastNote">
-      <div class="glass card reveal" style="text-align:center;padding:34px">
-        <div style="font-size:38px">🦋</div>
-        <h2>قبل ما تمشي…</h2>
-        <p id="closingMessage" class="sub">أتمنى كل مرة تفتحي فيها الموقع تلاقي تفصيلة لطيفة ترسم ابتسامة على وشك. ❤️</p>
-        <p class="signature">معاذ شعيب</p>
-        <p class="sub">تم التصميم والتطوير بكل حب ❤️</p>
-        <button id="whatsappBtn">ابعتي رأيك لمعاذ على واتساب 💗</button>
-      </div>
-    </section>
-  </main>
-  <footer><p class="tiny">هدية رقمية معمولة بكل حب • معاذ شعيب</p><p style="color:#ffabc7">♡ صُنعت بكل حب وعشق ♡</p></footer>
-</div>
-
-<!-- شريط الموسيقى الرومانسية التلقائية -->
-<div id="musicDock" class="hidden">
-  <div class="music-row">
-    <div class="music-meta"><div id="songName">موسيقى رومانسية ساحرة</div><div id="songState">تشتغل تلقائياً 🎶</div></div>
-    <button class="mini-btn" id="playBtn">▶</button>
-    <button class="mini-btn ghost" id="nextBtn" aria-label="الأغنية التالية">⏭</button>
-  </div>
-  <audio id="audio" preload="auto" loop></audio>
-</div>
-
-<div id="adminOverlay" class="hidden">
-  <div class="admin-inner">
-    <div class="admin-top"><h2>⚙️ لوحة معاذ شعيب</h2><button id="closeAdmin" class="ghost">إغلاق ✕</button></div>
-    <div class="notice">جميع التعديلات هنا تتزامن فورياً عبر قاعدة البيانات السحابية (Supabase) لكي تظهر لدى جنى تلقائياً.</div>
     
-    <div class="glass admin-block">
-      <h3>🔐 كلمات المرور</h3>
-      <label>كلمة مرور فتح الموقع</label><input id="adminSitePass" type="password">
-      <label>كلمة مرور لوحة الأدمن</label><input id="adminPanelPass" type="password">
-      <button id="savePasswords">حفظ كلمات المرور</button>
+    <!-- قسم العداد -->
+    <div class="glass-box">
+      <h2 style="text-align: center; color: var(--primary-pink);">⏳ عداد حكايتنا</h2>
+      <div class="counter-box">
+        <div class="counter-item"><div class="counter-num" id="cD">0</div><div>يوم</div></div>
+        <div class="counter-item"><div class="counter-num" id="cH">00</div><div>ساعة</div></div>
+        <div class="counter-item"><div class="counter-num" id="cM">00</div><div>دقيقة</div></div>
+        <div class="counter-item"><div class="counter-num" id="cS">00</div><div>ثانية</div></div>
+      </div>
     </div>
 
-    <div class="glass admin-block">
-      <h3>✨ العناوين والمظهر</h3>
-      <label>عنوان شاشة القفل والعنوان الرئيسي</label><input id="adminTitle">
-      <label>الوصف الرئيسي</label><textarea id="adminSubtitle"></textarea>
-      <label>وصف العداد</label><input id="adminCounterIntro">
-      <label>عبارة فوق العداد</label><input id="adminCounterCaption">
-      <label>رسالة الختام</label><textarea id="adminClosing"></textarea>
-      <label>رابط صورة الخلفية للرئيسية</label><input id="adminHeroImage" placeholder="رابط مباشر أو جوجل درايف">
-      <label>رابط فيديو الخلفية المتحرك (الرئيسية)</label><input id="adminBgVideo" placeholder="رابط فيديو MP4 مباشر أو جوجل درايف">
-      <label>رابط فيديو القسم الرومانسي الخاص</label><input id="adminRomanceVideo" placeholder="رابط فيديو MP4 مباشر أو جوجل درايف">
-      <label>رابط الصورة الدائرية الأولى</label><input id="adminCircle1" placeholder="رابط جوجل درايف">
-      <label>رابط الصورة الدائرية الثانية</label><input id="adminCircle2" placeholder="رابط جوجل درايف">
-      <label>رابط واتساب بصيغة دولية بدون +</label><input id="adminWhatsapp" placeholder="201550660352">
-      <button id="saveAppearance">حفظ المظهر</button>
+    <!-- قسم الصور الدائرية -->
+    <div class="glass-box" style="text-align: center;">
+      <h2 style="color: var(--primary-pink);">💖 صور لا تُنسى</h2>
+      <div class="circle-imgs">
+        <div class="circle-card"><img id="img1" alt="صورة 1"></div>
+        <div class="circle-card"><img id="img2" alt="صورة 2"></div>
+      </div>
     </div>
 
-    <div class="glass admin-block">
-      <h3>⏳ إعداد عداد الوقت</h3>
-      <label>تاريخ ووقت البداية</label><input id="adminStartDate" type="datetime-local">
-      <button id="saveCounter">حفظ تاريخ العداد</button>
+    <!-- قسم الرسائل الـ 10 -->
+    <div class="glass-box">
+      <h2 style="text-align: center; color: var(--primary-pink); margin-bottom: 20px;">💌 رسائل خاصة ليكي</h2>
+      <div id="msgGrid" class="grid"></div>
     </div>
 
-    <div class="glass admin-block">
-      <h3>📖 محطات الحكاية</h3>
-      <textarea id="adminTimeline" style="min-height:180px"></textarea>
-      <button id="saveTimeline">حفظ المحطات</button>
+    <!-- التوقيع -->
+    <div class="glass-box" style="text-align: center; margin-top: 30px;">
+      <h2 style="font-size: 32px; color: var(--primary-pink);">معاذ شعيب</h2>
+      <p style="margin-top: 8px;">صُنعت بكل عشق وحب ❤️</p>
     </div>
 
-    <div class="glass admin-block">
-      <h3>🖼️ معرض الصور (يدعم روابط درايف)</h3>
-      <textarea id="adminGallery" style="min-height:150px"></textarea>
-      <button id="saveGallery">حفظ المعرض</button>
-    </div>
+  </main>
+</div>
 
-    <div class="glass admin-block">
-      <h3>💌 تعديل الرسائل العشرة</h3>
-      <textarea id="adminMessages" style="min-height:240px"></textarea>
-      <button id="saveMessages">حفظ الرسائل</button>
-    </div>
-
-    <div class="glass admin-block">
-      <h3>🎵 قائمة الموسيقى الرومانسية</h3>
-      <textarea id="adminSongs" style="min-height:140px" placeholder="اسم الأغنية | رابط MP3 مباشر"></textarea>
-      <button id="saveSongs">حفظ قائمة الموسيقى</button>
-    </div>
-
-    <div class="glass admin-block">
-      <h3>🧠 تعديل الاختبار</h3>
-      <textarea id="adminQuiz" style="min-height:280px"></textarea>
-      <button id="saveQuiz">حفظ الأسئلة</button>
-    </div>
-  </div>
+<!-- مشغل الموسيقى -->
+<div id="musicBar" class="hidden">
+  <span style="font-size: 20px;">🎵</span>
+  <span id="musicStatus" style="font-size: 13px;">موسيقى رومانسية...</span>
+  <button onclick="toggleAudio()" style="padding: 6px 14px; font-size: 12px;">تشغيل/إيقاف</button>
+  <audio id="bgAudio" loop></audio>
 </div>
 
 <script>
-(function() {
-"use strict";
-var $ = function(id) { return document.getElementById(id); };
-var SUPABASE_URL = "https://rwdvedsmitwoxkfgxfzm.supabase.co";
-var SUPABASE_KEY = "sb_publishable_gO3EKNRFwHMisUgbABUPig_K1XMkOnM";
-var supabaseReady = function() { return SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("PASTE_"); };
-
-// دالة ذكية لإصلاح روابط جوجل درايف وعرضها مباشرة 100%
-function fixDriveUrl(url) {
-  if (!url) return "";
-  var trimmed = String(url).trim();
-  var match = trimmed.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-  if (match && match[1]) {
-    return "https://lh3.googleusercontent.com/d/" + match[1];
-  }
-  return trimmed;
+// تحويل روابط درايف لرابط صريح ومباشر
+function driveFix(url) {
+  if(!url) return "";
+  var m = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  return m ? "https://lh3.googleusercontent.com/d/" + m[1] : url;
 }
 
-var defaultConfig = {
-  sitePass:"1234", adminPass:"13451345",
-  title:"إلى جنى… حكاية صغيرة من قلبي ❤️",
-  subtitle:"مش مجرد لينك؛ دي مساحة ساحرة فيها كلام وذكريات وتفاصيل معمولة مخصوص ليكي.",
-  counterIntro:"وقت بيعد من لحظة مميزة… والتفاصيل بتكمل الحكاية.",
-  counterCaption:"من يوم ما بدأت حكايتنا",
-  startDate:"2025-06-09T18:30",
-  closing:"أتمنى كل مرة تفتحي فيها الموقع تلاقي تفصيلة لطيفة ترسم ابتسامة على وشك. ❤️",
-  heroImage:"https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1800&q=85",
-  bgVideo: fixDriveUrl("https://drive.google.com/file/d/1KaiD81iinuuYaDW7C3nXSZPjkU8EkwQh/view?usp=drivesdk"),
-  romanceVideo: fixDriveUrl("https://drive.google.com/file/d/1KaiD81iinuuYaDW7C3nXSZPjkU8EkwQh/view?usp=drivesdk"),
-  circle1: fixDriveUrl("https://drive.google.com/file/d/1CirraVRSfknAShQBzuCcvKR815iZ8Ryl/view?usp=drivesdk"),
-  circle2: fixDriveUrl("https://drive.google.com/file/d/1RVHVXkKzbiv4bS19YnKslkhz2hVaOOD3/view?usp=drivesdk"),
-  whatsapp:"201550660352",
-  timeline:[
-    ["أجمل صدفة في حياتي ✨","13/8 — بداية الكلام الساعة 12:04 بالضبط","اتعرفنا من جروب صدفة، وكانت أجمل صدفة في حياتي."],
-    ["أول سهرة سوا 💌","أول يوم سهرنا فيه مع بعض في الجروب","سهرنا واتكلمنا وعرفنا بعض أكتر، وكانت بداية ذكريات حلوة."],
-    ["ضحكة مش بتتنسي 😂","لما بنتنمر على أي حد عمومًا","الضحك والهزار اللي بينا من التفاصيل اللي بتفضل في الذاكرة."],
-    ["والحكاية مكملة 🦋","لسه في ذكريات كتير جاية","كل يوم جديد ممكن يضيف حكاية صغيرة نفتكرها ونضحك عليها."]
-  ],
-  gallery:[
-    ["ورود هادية","https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80"],
-    ["سماء وقت الغروب","https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80"],
-    ["نجوم وليل","https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=900&q=80"],
-    ["وردة وردية","https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80"]
-  ],
-  messages:[
+// البيانات الأساسية المربوطة فوراً
+var appData = {
+  pass: "1234",
+  title: "إلى جنى… حكاية صغيرة من قلبي ❤️",
+  video: driveFix("https://drive.google.com/file/d/1KaiD81iinuuYaDW7C3nXSZPjkU8EkwQh/view?usp=drivesdk"),
+  img1: driveFix("https://drive.google.com/file/d/1CirraVRSfknAShQBzuCcvKR815iZ8Ryl/view?usp=drivesdk"),
+  img2: driveFix("https://drive.google.com/file/d/1RVHVXkKzbiv4bS19YnKslkhz2hVaOOD3/view?usp=drivesdk"),
+  startDate: "2025-06-09T18:30",
+  music: "https://assets.mixkit.co/music/preview/mixkit-romantic-suspense-499.mp3",
+  messages: [
     "بصي بقى، البوست البنات الكلام ده ليكي: أنا بحبك وطول مانا فيا الروح هفضل أحبك ومش هحب حد غيرك يا ست البنات، لأنك أحلى حاجة شافت عيني.",
     "بحبك يا صدفة لقيت فيها عمري وأجمل من اختاره قلبي.",
     "حتى لو كان لدي مليون اختيار هفضل أختارك في كل مرة.",
@@ -431,651 +219,82 @@ var defaultConfig = {
     "مهما قلت كلام وإني بحبك قد إيه مش هيوصف اللي جوايا ليكي، بس فعلًا إنتِ أغلى حد في حياتي. بحبك بحبك.",
     "بحبك بحبك. شكرًا على كل لحظة حلوة وكل كلمة لطيفة.",
     "دي مش نهاية الحكاية، دي صفحة صغيرة من ذكريات جميلة. بحبك يا ممرضة قلبي ❤️"
-  ],
-  songs:[
-    ["موسيقى رومانسية هادئة | https://assets.mixkit.co/music/preview/mixkit-romantic-suspense-499.mp3"]
-  ],
-  quiz:[
-    ["إيه اللون اللي بحبه أكتر؟","الأسود","الأزرق","الأحمر",1],
-    ["إيه أكتر مجال بيشدني؟","التكنولوجيا","الطبخ","الرسم",1],
-    ["أنا بحب أتعلم حاجات جديدة؟","أيوه","لأ","مش أبدًا",1],
-    ["إيه الأهم في الكلام؟","الصدق والاحترام","المظاهر","المجاملة بس",1],
-    ["لو عندي مشكلة أعمل إيه؟","أفكر وأحاول أحلها","أستعجل","أتجاهلها دايمًا",1],
-    ["إيه صفة بحبها في الناس؟","الوفاء","التكبر","عدم الاهتمام",1],
-    ["بحب الهدوء أحيانًا؟","أيوه","لأ أبدًا","مستحيل",1],
-    ["إيه اللي أتمنّاه للي بحبهم؟","الخير والنجاح","التعب","القلق",1],
-    ["إيه أفضل طريقة للتفاهم؟","نسمع بعض باحترام","نزعق","نتجاهل بعض",1],
-    ["إيه رأيي في التفاصيل الصغيرة؟","ممكن تفرق جدًا","ملهاش أي معنى","مش مهمة أبدًا",1]
   ]
 };
 
-var config;
-try {
-  var stored = JSON.parse(localStorage.getItem("moazLoveConfig") || "{}");
-  config = Object.assign({}, defaultConfig, stored);
-} catch(e) { config = Object.assign({}, defaultConfig); }
+// التحقق وتطبيق التتابع
+function checkPass() {
+  var p = document.getElementById("passInput").value.trim();
+  if(p === appData.pass) {
+    document.getElementById("lockPage").classList.add("hidden");
+    var seq = document.getElementById("loveSequence");
+    var txt = document.getElementById("seqText");
+    seq.classList.add("active");
 
-var answers = {};
-var songIndex = 0;
+    // 1) أول 4 ثوانٍ
+    txt.textContent = "❤️ عيد حب سعيد يا چوچا ❤️";
 
-function saveConfig(){
-  localStorage.setItem("moazLoveConfig", JSON.stringify(config));
-  if(!supabaseReady()) return;
-  fetch(SUPABASE_URL + "/rest/v1/site_settings?id=eq.1", {
-    method:"PATCH",
-    headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer " + SUPABASE_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},
-    body:JSON.stringify({settings:config, updated_at:new Date().toISOString()})
-  }).catch(function(err){ console.error(err); });
-}
+    // 2) بعد 4 ثوانٍ
+    setTimeout(function(){
+      txt.textContent = "💖 بحبك يا جنى 💖";
+    }, 4000);
 
-function loadCloudConfig(){
-  if(!supabaseReady()) return;
-  fetch(SUPABASE_URL + "/rest/v1/site_settings?select=settings&id=eq.1", {
-    headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer " + SUPABASE_KEY}
-  })
-  .then(function(res){ return res.json(); })
-  .then(function(rows){
-    if(rows && rows[0] && rows[0].settings){
-      config = Object.assign({}, defaultConfig, rows[0].settings);
-      localStorage.setItem("moazLoveConfig", JSON.stringify(config));
-      renderAll();
-    }
-  }).catch(function(err){ console.error(err); });
-}
+    // 3) بعد 7 ثوانٍ
+    setTimeout(function(){
+      txt.textContent = "✨ من معاذ شعيب ✨";
+    }, 7000);
 
-function esc(val){
-  return String(val == null ? "" : val).replace(/[&<>"']/g, function(ch){
-    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch];
-  });
-}
+    // 4) فتح الموقع النهائي بعد 9.5 ثوانٍ
+    setTimeout(function(){
+      seq.classList.remove("active");
+      document.getElementById("mainSite").classList.remove("hidden");
+      document.getElementById("musicBar").classList.remove("hidden");
+      initSite();
+    }, 9500);
 
-function safeHttpUrl(val){
-  try {
-    var u = new URL(String(val));
-    return (u.protocol === "https:" || u.protocol === "http:") ? u.href : "";
-  } catch(e) { return ""; }
-}
-
-function setText(id, val){
-  var el = $(id);
-  if(el) el.textContent = val == null ? "" : val;
-}
-
-function parseLines(val, minimum){
-  return val.split("\n").map(function(s){ return s.trim(); }).filter(Boolean).map(function(s){
-    return s.split("|").map(function(x){ return x.trim(); });
-  }).filter(function(row){ return row.length >= minimum; });
-}
-
-function renderFloaters(){
-  var root = $("floaters");
-  var emojis = ["❤️","💖","💌","🌹","✨","💘","💓","🌷","🦋","💕","💗","💞"];
-  if(!root) return;
-  root.innerHTML = "";
-  for(var i=0; i<35; i++){
-    var el = document.createElement("span");
-    el.className = "floater";
-    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    el.style.left = (Math.random() * 100) + "%";
-    el.style.fontSize = (16 + Math.random() * 28) + "px";
-    el.style.animationDuration = (6 + Math.random() * 9) + "s";
-    el.style.animationDelay = (-Math.random() * 20) + "s";
-    root.appendChild(el);
-  }
-}
-
-function setupReveals(){
-  var cards = document.querySelectorAll(".reveal:not([data-observed])");
-  if(!("IntersectionObserver" in window)){
-    for(var i=0; i<cards.length; i++){ cards[i].classList.add("visible"); }
-    return;
-  }
-  var observer = new IntersectionObserver(function(entries){
-    for(var i=0; i<entries.length; i++){
-      if(entries[i].isIntersecting){
-        entries[i].target.classList.add("visible");
-        observer.unobserve(entries[i].target);
-      }
-    }
-  }, {threshold:0.12});
-  for(var j=0; j<cards.length; j++){
-    cards[j].dataset.observed = "1";
-    observer.observe(cards[j]);
-  }
-}
-
-function renderConfigText(){
-  setText("lockTitle", config.title);
-  setText("heroTitle", config.title);
-  setText("lockSubtitle", config.subtitle);
-  setText("heroSubtitle", config.subtitle);
-  setText("counterIntro", config.counterIntro);
-  setText("counterCaption", config.counterCaption);
-  setText("closingMessage", config.closing);
-
-  var heroVid = $("heroBgVideo");
-  if(heroVid){
-    heroVid.src = fixDriveUrl(config.bgVideo) || defaultConfig.bgVideo;
-    heroVid.play().catch(function(){});
-  }
-
-  var romanceEl = $("romanceVideoEl");
-  if(romanceEl){
-    romanceEl.src = fixDriveUrl(config.romanceVideo) || defaultConfig.romanceVideo;
-    romanceEl.play().catch(function(){});
-  }
-
-  var d1 = $("dualImg1"); var d2 = $("dualImg2");
-  if(d1) d1.src = fixDriveUrl(config.circle1) || defaultConfig.circle1;
-  if(d2) d2.src = fixDriveUrl(config.circle2) || defaultConfig.circle2;
-}
-
-function renderTimeline(){
-  var timeline = $("timeline");
-  if(!timeline) return;
-  timeline.innerHTML = config.timeline.map(function(item, i){
-    return '<article class="glass card reveal">' +
-      '<span class="pill">MEMORY ' + String(i+1).padStart(2,"0") + '</span>' +
-      '<h3>' + esc(item[0]) + '</h3><p class="tiny">' + esc(item[1]) + '</p><p class="sub">' + esc(item[2]) + '</p>' +
-    '</article>';
-  }).join("");
-  setupReveals();
-}
-
-function renderGallery(){
-  var grid = $("galleryGrid");
-  if(!grid) return;
-  grid.innerHTML = config.gallery.map(function(item, i){
-    var url = fixDriveUrl(item[1]);
-    return '<article class="glass photo-card reveal">' +
-      (url ? '<img src="' + esc(url) + '" alt="' + esc(item[0]) + '" loading="lazy" onerror="this.style.display=\'none\'">' : '<div style="height:170px;display:grid;place-items:center;font-size:45px">🌷</div>') +
-      '<div class="photo-caption"><h3>' + esc(item[0]) + '</h3><p class="tiny">ذكرى لطيفة • ' + (i+1) + '</p></div>' +
-    '</article>';
-  }).join("");
-  setupReveals();
-}
-
-function renderMessages(){
-  var grid = $("messagesGrid");
-  if(!grid) return;
-  grid.innerHTML = config.messages.map(function(message, i){
-    return '<article class="glass card message-card reveal">' +
-      '<div class="icon">💌</div><h3>رسالة ' + (i+1) + '</h3>' +
-      '<p id="message-' + i + '" class="message-text closed">' + esc(message) + '</p>' +
-      '<button class="ghost" data-open-message="' + i + '">افتحي الرسالة ✨</button>' +
-    '</article>';
-  }).join("");
-  
-  var btns = grid.querySelectorAll("[data-open-message]");
-  for(var i=0; i<btns.length; i++){
-    btns[i].addEventListener("click", function(){
-      var idx = this.getAttribute("data-open-message");
-      var p = $("message-" + idx);
-      p.classList.toggle("closed");
-      this.textContent = p.classList.contains("closed") ? "افتحي الرسالة ✨" : "اقفلي الرسالة 💗";
-      this.closest(".message-card").classList.toggle("opened", !p.classList.contains("closed"));
-    });
-  }
-  setupReveals();
-}
-
-function renderQuiz(){
-  answers = {};
-  var qRes = $("quizResult");
-  if(qRes) qRes.classList.add("hidden");
-  var qQuest = $("quizQuestions");
-  if(!qQuest) return;
-  
-  qQuest.innerHTML = config.quiz.map(function(q, i){
-    var choicesHtml = q.slice(1,4).map(function(choice, j){
-      return '<button class="option" type="button" data-q="' + i + '" data-a="' + (j+1) + '">' + (j+1) + '. ' + esc(choice) + '</button>';
-    }).join("");
-    return '<div class="quiz-q"><strong>' + (i+1) + '. ' + esc(q[0]) + '</strong>' + choicesHtml + '</div>';
-  }).join("");
-
-  var optBtns = qQuest.querySelectorAll("[data-q]");
-  for(var k=0; k<optBtns.length; k++){
-    optBtns[k].addEventListener("click", function(){
-      var q = Number(this.getAttribute("data-q"));
-      var a = Number(this.getAttribute("data-a"));
-      answers[q] = a;
-      var siblings = qQuest.querySelectorAll('[data-q="' + q + '"]');
-      for(var s=0; s<siblings.length; s++){ siblings[s].classList.remove("selected"); }
-      this.classList.add("selected");
-    });
-  }
-}
-
-function submitQuiz(){
-  var box = $("quizResult");
-  if(!box) return;
-  if(Object.keys(answers).length !== config.quiz.length){
-    box.textContent = "جاوبي على كل الأسئلة الأول عشان نحسب النتيجة ❤️";
-    box.classList.remove("hidden");
-    return;
-  }
-  var correct = 0;
-  for(var i=0; i<config.quiz.length; i++){
-    if(answers[i] === Number(config.quiz[i][4])) correct++;
-  }
-  var score = Math.round((correct / config.quiz.length) * 100);
-
-  box.innerHTML = "";
-  box.classList.remove("hidden");
-  
-  var title = document.createElement("h3");
-  title.textContent = "إنتِ تعرفيني بنسبة " + score + "% ❤️";
-  
-  var desc = document.createElement("p");
-  desc.textContent = "إجابات صحيحة: " + correct + " من " + config.quiz.length + ".";
-  
-  box.appendChild(title);
-  box.appendChild(desc);
-
-  var wa = document.createElement("a");
-  wa.style.display = "inline-block";
-  wa.style.marginTop = "10px";
-  wa.style.padding = "10px 16px";
-  wa.style.background = "#25d366";
-  wa.style.color = "#fff";
-  wa.style.borderRadius = "10px";
-  wa.style.textDecoration = "none";
-  wa.style.fontWeight = "bold";
-  wa.href = "https://wa.me/" + config.whatsapp + "?text=" + encodeURIComponent("النتيجة بتاعتي في اختبار معاذ: " + score + "% (" + correct + "/" + config.quiz.length + ") ❤️");
-  wa.target = "_blank";
-  wa.rel = "noopener";
-  wa.textContent = "📲 شارك النتيجة مع معاذ على الواتس";
-  
-  box.appendChild(document.createElement("br"));
-  box.appendChild(wa);
-}
-
-var submitBtn = $("submitQuiz");
-if(submitBtn) submitBtn.addEventListener("click", submitQuiz);
-
-function parseSongs(){
-  var raw = config.songs;
-  if (Array.isArray(raw)) {
-    return raw.map(function(item){
-      if (Array.isArray(item)) {
-        return { name: (item[0] || "موسيقى رومانسية").trim(), url: safeHttpUrl(item[1] || "") };
-      } else if (typeof item === 'string') {
-        var parts = item.split('|');
-        return { name: (parts[0] || "موسيقى رومانسية").trim(), url: safeHttpUrl(parts[1] || parts[0] || "") };
-      }
-      return null;
-    }).filter(function(x){ return x && x.url; });
-  }
-  return [];
-}
-
-function renderSongs(){
-  var songs = parseSongs();
-  var dock = $("musicDock");
-  if(dock) dock.classList.toggle("hidden", songs.length === 0);
-  if(!songs.length){
-    var aud = $("audio");
-    if(aud){ aud.pause(); aud.removeAttribute("src"); }
-    setText("songName", "أضيفي رابط موسيقى");
-    setText("songState", "الموسيقى غير مضافة");
-    return;
-  }
-  if(songIndex >= songs.length) songIndex = 0;
-  setText("songName", songs[songIndex].name);
-  setText("songState", "جاهزة للتشغيل 🎶");
-  var audEl = $("audio");
-  if(audEl) audEl.src = songs[songIndex].url;
-}
-
-function playAudio(){
-  var audio = $("audio");
-  if(!audio || !audio.src){ setText("songState", "أضيفي رابط ملف صوتي صالح"); return; }
-  if(audio.paused){
-    audio.play().then(function(){
-      setText("songState", "بتشتغل دلوقتي ♫");
-      var pb = $("playBtn"); if(pb) pb.textContent = "Ⅱ";
-    }).catch(function(){
-      setText("songState", "اضغطي تشغيل مرة تانية");
-    });
   } else {
-    audio.pause();
-    setText("songState", "متوقفة مؤقتًا");
-    var pb = $("playBtn"); if(pb) pb.textContent = "▶";
+    document.getElementById("errMsg").textContent = "كلمة السر غلط يا جوجا، حاولي تاني 💔";
   }
 }
 
-var pBtn = $("playBtn"); if(pBtn) pBtn.addEventListener("click", playAudio);
-var nBtn = $("nextBtn"); if(nBtn) nBtn.addEventListener("click", function(){
-  var songs = parseSongs();
-  if(!songs.length) return;
-  songIndex = (songIndex + 1) % songs.length;
-  renderSongs();
-  playAudio();
-});
-
-function updateCounter(){
-  var start = new Date(config.startDate);
-  var now = new Date();
-  if(isNaN(start.getTime())) return;
-  var ms = Math.max(0, now - start);
-  var totalSeconds = Math.floor(ms / 1000);
-  var totalMinutes = Math.floor(totalSeconds / 60);
-  var totalHours = Math.floor(totalMinutes / 60);
-  var totalDays = Math.floor(totalHours / 24);
-  var years = now.getFullYear() - start.getFullYear();
-  var months = now.getMonth() - start.getMonth() + (years * 12);
-  if(now.getDate() < start.getDate()) months--;
-  months = Math.max(0, months);
-  var remainderMs = now >= start ? ms : 0;
-  var days = Math.floor(remainderMs / 86400000);
-  var hours = Math.floor(totalSeconds / 3600) % 24;
-  var minutes = Math.floor(totalSeconds / 60) % 60;
-  var seconds = totalSeconds % 60;
-
-  setText("months", months.toLocaleString("en-US"));
-  setText("days", days.toLocaleString("en-US"));
-  setText("hours", String(hours).padStart(2, "0"));
-  setText("minutes", String(minutes).padStart(2, "0"));
-  setText("seconds", String(seconds).padStart(2, "0"));
-  setText("weeks", Math.floor(totalDays / 7).toLocaleString("en-US"));
-  setText("totalDays", totalDays.toLocaleString("en-US"));
-  setText("totalHours", totalHours.toLocaleString("en-US"));
-  setText("floatDays", totalDays.toLocaleString("en-US"));
-  setText("floatHours", String(hours).padStart(2, "0"));
-  setText("floatMinutes", String(minutes).padStart(2, "0"));
-  setText("floatSeconds", String(seconds).padStart(2, "0"));
-}
-
-var surprises = [
-  "أتمنى تلاقي النهارده سبب صغير يفرح قلبك ❤️",
-  "دي رسالة بتقولك إن التفاصيل الصغيرة ممكن تبقى جميلة جدًا 🌷",
-  "خليكي فخورة بنفسك وبالطريق اللي بتكمليه ✨",
-  "أتمنى أيامك الجاية تكون أهدى وأحلى 🦋",
-  "ابتسامة صغيرة منك ممكن تغيّر شكل يوم كامل 💗"
-];
-var openG = $("openGift");
-if(openG){
-  openG.addEventListener("click", function(){
-    var gi = $("giftIcon");
-    var gt = $("giftText");
-    if(gi) gi.textContent = ["💖","🌹","🦋","✨","💌"][Math.floor(Math.random() * 5)];
-    if(gt) gt.textContent = surprises[Math.floor(Math.random() * surprises.length)];
-    openG.textContent = "افتحي مفاجأة تانية 🎁";
-  });
-}
-
-var moods = {
-  happy:"يا رب الفرحة دي تفضل معاكي طول اليوم 🥰",
-  calm:"خدي وقتك واهدي شوية؛ مش لازم كل حاجة تتحل مرة واحدة 🌙",
-  laugh:"افتكري موقف مضحك حصل بينكم أو حاجة بتضحكك 😂",
-  brave:"خطوة صغيرة كل يوم ممكن توصلك لحاجة كبيرة. إنتِ قدها 🌷"
-};
-var moodBtns = document.querySelectorAll("[data-mood]");
-for(var m=0; m<moodBtns.length; m++){
-  moodBtns[m].addEventListener("click", function(){
-    var mr = $("moodResult");
-    if(mr){
-      mr.textContent = moods[this.getAttribute("data-mood")] || "أتمنى يومك يكون لطيف ❤️";
-      mr.classList.remove("hidden");
-    }
-  });
-}
-
-var waBtn = $("whatsappBtn");
-if(waBtn){
-  waBtn.addEventListener("click", function(){
-    var number = String(config.whatsapp || "201550660352").replace(/\D/g, "");
-    window.open("https://wa.me/" + number + "?text=" + encodeURIComponent("الموقع عجبني جداً يا معاذ! ❤️"), "_blank", "noopener");
-  });
-}
-
-function askAdmin(){
-  var attempt = prompt("كلمة مرور لوحة الأدمن");
-  if(attempt === null) return;
-  if(attempt !== config.adminPass){ alert("كلمة المرور غير صحيحة"); return; }
-  fillAdmin();
-  var ao = $("adminOverlay"); if(ao) ao.classList.remove("hidden");
-}
-var adBtn = $("adminBtn"); if(adBtn) adBtn.addEventListener("click", askAdmin);
-var clAdmin = $("closeAdmin"); if(clAdmin) clAdmin.addEventListener("click", function(){
-  var ao = $("adminOverlay"); if(ao) ao.classList.add("hidden");
-});
-
-function fillAdmin(){
-  $("adminSitePass").value = config.sitePass;
-  $("adminPanelPass").value = config.adminPass;
-  $("adminTitle").value = config.title;
-  $("adminSubtitle").value = config.subtitle;
-  $("adminCounterIntro").value = config.counterIntro;
-  $("adminCounterCaption").value = config.counterCaption;
-  $("adminClosing").value = config.closing;
-  $("adminHeroImage").value = config.heroImage;
-  $("adminBgVideo").value = config.bgVideo || "";
-  $("adminRomanceVideo").value = config.romanceVideo || "";
-  $("adminCircle1").value = config.circle1 || "";
-  $("adminCircle2").value = config.circle2 || "";
-  $("adminWhatsapp").value = config.whatsapp;
-  $("adminStartDate").value = config.startDate;
-  $("adminTimeline").value = config.timeline.map(function(x){ return x.join(" | "); }).join("\n");
-  $("adminGallery").value = config.gallery.map(function(x){ return x.join(" | "); }).join("\n");
-  $("adminMessages").value = config.messages.join("\n");
-  var songsArr = config.songs;
-  if (Array.isArray(songsArr)) {
-    $("adminSongs").value = songsArr.map(function(x){
-      if(Array.isArray(x)) return x.join(" | ");
-      return String(x);
-    }).join("\n");
-  } else {
-    $("adminSongs").value = "";
-  }
-  $("adminQuiz").value = config.quiz.map(function(x){ return x.join(" | "); }).join("\n");
-}
-
-var sPass = $("savePasswords");
-if(sPass) sPass.addEventListener("click", function(){
-  config.sitePass = $("adminSitePass").value;
-  config.adminPass = $("adminPanelPass").value;
-  saveConfig();
-  alert("تم حفظ كلمات المرور بنجاح.");
-});
-
-var sApp = $("saveAppearance");
-if(sApp) sApp.addEventListener("click", function(){
-  config.title = $("adminTitle").value.trim() || defaultConfig.title;
-  config.subtitle = $("adminSubtitle").value.trim();
-  config.counterIntro = $("adminCounterIntro").value.trim();
-  config.counterCaption = $("adminCounterCaption").value.trim();
-  config.closing = $("adminClosing").value.trim();
-  config.heroImage = safeHttpUrl($("adminHeroImage").value) || defaultConfig.heroImage;
-  config.bgVideo = fixDriveUrl($("adminBgVideo").value) || defaultConfig.bgVideo;
-  config.romanceVideo = fixDriveUrl($("adminRomanceVideo").value) || defaultConfig.romanceVideo;
-  config.circle1 = fixDriveUrl($("adminCircle1").value) || defaultConfig.circle1;
-  config.circle2 = fixDriveUrl($("adminCircle2").value) || defaultConfig.circle2;
-  config.whatsapp = $("adminWhatsapp").value.replace(/\D/g,"") || "201550660352";
-  saveConfig();
-  renderConfigText();
-  alert("تم حفظ المظهر وتحديثه بنجاح.");
-});
-
-var sCount = $("saveCounter");
-if(sCount) sCount.addEventListener("click", function(){
-  var date = $("adminStartDate").value;
-  if(!date) return;
-  config.startDate = date;
-  saveConfig();
-  updateCounter();
-  alert("تم حفظ العداد.");
-});
-
-var sTime = $("saveTimeline");
-if(sTime) sTime.addEventListener("click", function(){
-  config.timeline = parseLines($("adminTimeline").value, 3).map(function(x){ return x.slice(0,3); });
-  saveConfig();
-  renderTimeline();
-  alert("تم حفظ المحطات.");
-});
-
-var sGal = $("saveGallery");
-if(sGal) sGal.addEventListener("click", function(){
-  config.gallery = parseLines($("adminGallery").value, 2).map(function(x){ return [x[0], fixDriveUrl(x[1])]; }).filter(function(x){ return x[1]; });
-  saveConfig();
-  renderGallery();
-  alert("تم حفظ المعرض.");
-});
-
-var sMsg = $("saveMessages");
-if(sMsg) sMsg.addEventListener("click", function(){
-  var rows = $("adminMessages").value.split("\n").map(function(x){ return x.trim(); }).filter(Boolean);
-  if(rows.length !== 10){ alert("يجب إدخال 10 رسائل بالضبط."); return; }
-  config.messages = rows;
-  saveConfig();
-  renderMessages();
-  alert("تم حفظ الرسائل.");
-});
-
-var sSong = $("saveSongs");
-if(sSong) sSong.addEventListener("click", function(){
-  var rawLines = $("adminSongs").value.split("\n").map(function(s){ return s.trim(); }).filter(Boolean);
-  config.songs = rawLines.map(function(line){
-    var parts = line.split("|").map(function(x){ return x.trim(); });
-    if(parts.length >= 2) {
-      return [parts[0], safeHttpUrl(parts[1])];
-    } else {
-      return ["موسيقى رومانسية", safeHttpUrl(parts[0])];
-    }
-  }).filter(function(x){ return x[1]; });
-  songIndex = 0;
-  saveConfig();
-  renderSongs();
-  alert("تم حفظ قائمة الموسيقى.");
-});
-
-var sQuiz = $("saveQuiz");
-if(sQuiz) sQuiz.addEventListener("click", function(){
-  var rows = parseLines($("adminQuiz").value, 5);
-  if(rows.length !== 10){ alert("يجب إدخال 10 أسئلة."); return; }
-  config.quiz = rows.map(function(x){ return [x[0], x[1], x[2], x[3], Number(x[4])]; });
-  saveConfig();
-  renderQuiz();
-  alert("تم حفظ الاختبار.");
-});
-
-/* وظيفة الفتح السحري المتتابع بدقة بالثواني المحددة */
-function executeUnlock() {
-  var passwordInput = $("sitePassword");
-  var entered = passwordInput ? passwordInput.value.trim() : "";
+// تهيئة عناصر الموقع
+function initSite() {
+  document.getElementById("heroVid").src = appData.video;
+  document.getElementById("img1").src = appData.img1;
+  document.getElementById("img2").src = appData.img2;
   
-  if (entered !== config.sitePass) {
-    setText("lockError", "غلط يا جوجا، حاولي تاني 💔");
-    return;
-  }
-  
-  // لو الباسورد صح:
-  setText("lockError", "");
-  $("lockScreen").classList.add("hidden");
-  
-  var intro = $("loveIntro"); 
-  intro.classList.add("show");
-  
-  var field = $("introHeartField"); 
-  field.innerHTML = "";
-  
-  for (var i = 0; i < 160; i++) {
-    var h = document.createElement("span"); 
-    h.className = "intro-heart"; 
-    h.textContent = ["❤️","💖","💕","💗","💘","✨","🌹","💞"][i % 8];
-    h.style.left = (Math.random() * 100) + "%"; 
-    h.style.fontSize = (16 + Math.random() * 35) + "px";
-    h.style.setProperty("--dx", ((Math.random() - 0.5) * 140) + "vw"); 
-    h.style.setProperty("--sc", (0.8 + Math.random() * 2.2).toFixed(2));
-    h.style.animationDelay = (Math.random() * 0.4) + "s"; 
-    field.appendChild(h);
-  }
+  // بناء كروت الرسائل
+  var mContainer = document.getElementById("msgGrid");
+  mContainer.innerHTML = appData.messages.map(function(m, i){
+    return '<div class="glass-box" style="margin:0; padding:15px;">' +
+      '<h4 style="color:var(--primary-pink);">رسالة ' + (i+1) + ' 💌</h4>' +
+      '<p style="margin-top:10px; line-height:1.6;">' + m + '</p>' +
+    '</div>';
+  }).join("");
 
-  var seqText = $("sequenceText");
+  // تشغيل الصوت
+  var audio = document.getElementById("bgAudio");
+  audio.src = appData.music;
+  audio.play().catch(function(){});
 
-  // 1) المرحلة الأولى: "عيد حب سعيد يا چوچا" لمدة 4 ثوانٍ
-  seqText.textContent = "❤️ عيد حب سعيد يا چوچا ❤️";
-
-  // 2) بعد 4 ثوانٍ: الانتقال إلى "بحبك يا جنى" لمدة 3 ثوانٍ
-  setTimeout(function() {
-    seqText.style.animation = "none";
-    seqText.offsetHeight;
-    seqText.style.animation = "fadeInScale 0.6s cubic-bezier(.1,1.2,.3,1) forwards";
-    seqText.textContent = "💖 بحبك يا جنى 💖";
-  }, 4000);
-
-  // 3) بعد 7 ثوانٍ (4 + 3): الانتقال إلى "من معاذ شعيب" لمدة 2.5 ثانية
-  setTimeout(function() {
-    seqText.style.animation = "none";
-    seqText.offsetHeight;
-    seqText.style.animation = "fadeInScale 0.6s cubic-bezier(.1,1.2,.3,1) forwards";
-    seqText.textContent = "✨ من معاذ شعيب ✨";
-  }, 7000);
-
-  // 4) الدخول للموقع نهائياً بعد إجمالي 9.5 ثانية
-  setTimeout(function() {
-    intro.classList.remove("show");
-    $("site").classList.remove("hidden");
-    var fc = $("floatingCounter"); 
-    if (fc) fc.style.display = "block";
-    renderConfigText(); 
-    updateCounter(); 
-    setupReveals();
-
-    // تشغيل الموسيقى التلقائية
-    var songs = parseSongs();
-    if (songs.length) { 
-      renderSongs(); 
-      var aud = $("audio");
-      if(aud) {
-        aud.play().then(function(){
-          var pb = $("playBtn"); if(pb) pb.textContent = "Ⅱ";
-          setText("songState", "بتشتغل تلقائياً ♫");
-        }).catch(function(){
-          setText("songState", "اضغطي تشغيل للاستماع 🎶");
-        });
-      }
-    }
-  }, 9500);
+  // العداد
+  setInterval(updateTimer, 1000);
 }
 
-window.addEventListener("DOMContentLoaded", function(){
-  var unlockBtn = $("unlockBtn");
-  if (unlockBtn) {
-    unlockBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      executeUnlock();
-    });
-  }
-
-  var passField = $("sitePassword");
-  if (passField) {
-    passField.addEventListener("keydown", function(e) {
-      if (e.key === "Enter" || e.keyCode === 13) {
-        e.preventDefault();
-        executeUnlock();
-      }
-    });
-  }
-});
-
-function renderAll() {
-  renderConfigText();
-  renderTimeline();
-  renderGallery();
-  renderMessages();
-  renderQuiz();
-  renderSongs();
-  updateCounter();
+function updateTimer() {
+  var start = new Date(appData.startDate);
+  var diff = Math.max(0, new Date() - start);
+  document.getElementById("cD").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("cH").textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+  document.getElementById("cM").textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+  document.getElementById("cS").textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
 }
 
-renderFloaters(); 
-renderAll();
-setInterval(updateCounter, 1000);
-loadCloudConfig();
-
-})();
+function toggleAudio() {
+  var a = document.getElementById("bgAudio");
+  if(a.paused) a.play(); else a.pause();
+}
 </script>
+
 </body>
 </html>
